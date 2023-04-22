@@ -1,0 +1,64 @@
+.form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 40px;
+}
+.form-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+
+input[type=text], select, textarea {
+    width: 300px;
+}
+
+input:focus {
+    outline: none;
+}
+
+label {
+    display: inline-block;
+    width: 200px;
+}
+
+.form-btns {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+button {
+    background-color: #DDDDDD;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+}
+
+button[type=submit] {
+    background-color: #5484B7;
+    color: #fff;
+}
+
+button:disabled[type=submit] {
+    background-color: #96B1D1;
+    color: #DDDDDD;
+}
+
+.form-results {
+    background-color: #ccc;
+}
+
+.input-error {
+    border: 1px solid red;
+}
+
+.error-message {
+    width: 90px;
+    height: 30px;
+    font-size: 12px;
+    margin: 0;
+    padding: 5px;
+    color: red;
+}
