@@ -46,10 +46,6 @@ button:disabled[type=submit] {
     color: #DDDDDD;
 }
 
-.form-results {
-    background-color: #ccc;
-}
-
 .input-error {
     border: 1px solid red;
 }
@@ -62,3 +58,16 @@ button:disabled[type=submit] {
     padding: 5px;
     color: red;
 }
+
+.form-results {
+    background-color: #E5E5E5;
+    box-shadow: -2px -2px 1px #CCCCCC;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.form-results::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+

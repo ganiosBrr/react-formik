@@ -159,7 +159,7 @@ function Form() {
             </div>
             <div className="form-item">
                 <label htmlFor="notes">Notes</label>
-                <textarea name="notes" id="notes" cols="20" rows="2" placeholder="Notes" value={formik.values.notes} onChange={formik.handleChange}></textarea>
+                <textarea name="notes" id="notes" cols="20" rows="2" maxLength="101" placeholder="Notes" value={formik.values.notes} onChange={formik.handleChange}></textarea>
                 {formik.errors.notes ? <p className="error-message">{formik.errors.notes}</p> : null}
             </div>
             <div className="form-btns">
