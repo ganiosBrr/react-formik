@@ -3,7 +3,9 @@ import { useFormik } from "formik";
 const validate = values => {
     const errors = {};
     if (!/^[A-Za-z\s]*$/.test(values.firstName)) {
-        errors.firstName = 'Only alphabetic characters!'
+        errors.firstName = 'Only alphabetic characters!';
+    } else if (!/^[A-Za-z\s]*$/.test(values.lastName)) {
+        errors.lastName = 'Only alphabetic characters!';
     }
 
     if (!/^[0-9]*$/.test(values.age)) {
@@ -36,13 +38,18 @@ function Form() {
         }
     });
 
-    const handleReset = (event) => {
+    const handleReset = (e) => {
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const radioTypes = document.querySelectorAll('input[type="radio"]');
+        console.log(e);
         checkboxes.forEach((checkbox) => {
             checkbox.checked = false;
         });
+        radioTypes.forEach((radio) => {
+            radioTypes[0].checked = true;
+        });
 
-        formik.handleReset(event);
+        formik.handleReset();
     }
 
     const replacer = (key, value) => {
@@ -68,7 +75,15 @@ function Form() {
             </div>
             <div className="form-item">
                 <label htmlFor="lastName">Last Name</label>
-                <input id="lastName" type="text" placeholder="Last Name" name="lastName" value={formik.values.lastName} onChange={formik.handleChange}/>
+                <input 
+                id="lastName" 
+                type="text" 
+                placeholder="Last Name" 
+                name="lastName" 
+                value={formik.values.lastName} 
+                onChange={formik.handleChange}
+                className={formik.errors.lastName ? "input-error" : ""}/>
+                {formik.errors.lastName ? <p className="error-message">{formik.errors.lastName}</p> : null}
             </div>
             <div className="form-item">
                 <label htmlFor="age">Age</label>
