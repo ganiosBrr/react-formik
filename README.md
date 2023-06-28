@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React form using formik library to create and set validation to fields.
 
 ## Available Scripts
 
